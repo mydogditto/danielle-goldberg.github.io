@@ -117,8 +117,8 @@ function beginsWith(string, char) {
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
 // change both inputs to the same case, then compare using endsWith method
-let newOutput = 
-
+let newOutput = (string.toUpperCase().endsWith(char.toUpperCase()))
+return newOutput
 
     // YOUR CODE ABOVE HERE //
 }
@@ -151,11 +151,17 @@ function concat(stringOne, stringTwo) {
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // put all arguments in an array
     var args = Array.from(arguments);
+    // concotinate everything in the arguments array with the join method. Store the outcome in a new array
+    let newArray = args.join("");
+    // return the new array with all argument concatinated. 
+    return newArray
 
 
     // YOUR CODE ABOVE HERE //
-}
+} 
+
 
 /**
  * Given two Strings, return the longest of the two.
@@ -168,8 +174,17 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+// set up empty string
+let longestString = "";
+// loop over the argument strings using the arguments function
+    for (let i = 0; i < arguments.length; i++) {
+// compare all arguments to determen the longest by length
+      if (arguments[i].length > longestString.length) {
+        longestString = arguments[i];
+      }
+    }
+    // return the setup string
+    return longestString ;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -183,9 +198,11 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    // use the localeCompare method to evaluate the two arguments.
+let compare = stringTwo.localeCompare(stringOne)
 
-
-
+return compare
+sortAscending("String", septer)
     // YOUR CODE ABOVE HERE //
 }
 
@@ -199,7 +216,8 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+let compare2 = stringOne.localeCompare(stringTwo)
+return compare2
 
 
 
