@@ -68,12 +68,15 @@ toUpperCase(Hello)
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-
+// set up empty string
     let string3 = " "
+    // turn string 3 to lowercase 
     string3 = string.toLocaleLowerCase()
+    // replace all spaces with dashes using replaceAll
       string3 = string3.replaceAll(" ", "-")
+      // return string 3
       return string3
-      toDashCase("Hello World And Other words")
+     
 
     // YOUR CODE ABOVE HERE //
 }
@@ -92,11 +95,10 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-if (string(0)=== char){
-return true
-} else {return false
-}
-beginsWith("WTF", "T")
+// change both variables to the seame case, then use startsWith to compair the first letter
+   let newString = (string.toLowerCase().startsWith(char.toLowerCase())) 
+    return newString
+    beginsWith("max", "M")
     // YOUR CODE ABOVE HERE //
 }
 
@@ -114,7 +116,8 @@ beginsWith("WTF", "T")
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+// change both inputs to the same case, then compare using endsWith method
+let newOutput = 
 
 
     // YOUR CODE ABOVE HERE //
@@ -128,7 +131,10 @@ function endsWith(string, char) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+    let stringTogether = stringOne.concat(stringTwo)
+    return stringTogether 
+  
+  concat("Hello", "World")
 
     // YOUR CODE ABOVE HERE //
 }
