@@ -46,8 +46,15 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    return  function startsWithFilter(string){
+        if (string[0] === startsWith){
+          return true;
+        
+        } else {
+          return false;
+        }
+      
+      }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -75,10 +82,12 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    // set up a empty string to collect data
+    let result = " "
+for (let i = 0; i => array.length; i++)
     
     
-    
-    
+    return result 
     // YOUR CODE ABOVE HERE //
 }
 

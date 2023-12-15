@@ -134,7 +134,7 @@ function concat(stringOne, stringTwo) {
     let stringTogether = stringOne.concat(stringTwo)
     return stringTogether 
   
-  concat("Hello", "World")
+  
 
     // YOUR CODE ABOVE HERE //
 }
