@@ -108,16 +108,14 @@ function modifyStrings(strings, modify) {
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
 function allStringsPass(strings, test) {
-    // YOUR CODE BELOW HERE //
-    // 
     
-    function allStringsPass(strings, test) {
         // YOUR CODE BELOW HERE //
         // set up a empty array to collect data
-        let result = [];
+        let result = true;
         // loop through the array of strings
         for (let i = 0; i < strings.length; i++){
-    if (test(strings[i]) === true){
+            //use the Bicondition opporator to test if all the values are true
+    if (!!test(strings[i]) === !!true){
     result.push(strings[i])
     }
         } return result
@@ -125,11 +123,11 @@ function allStringsPass(strings, test) {
     let arr = ["words", "are", "fun"]
       let testCase = allStringsPass(arr, function(strings){
         return strings.startsWith("C")
-      })
+      });
     
     
     // YOUR CODE ABOVE HERE //
-}
+    
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
