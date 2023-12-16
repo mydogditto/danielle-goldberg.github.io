@@ -46,16 +46,10 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     
-    return  function startsWithFilter(string){
-        if (string[0] === startsWith){
-          return true;
-        
-        } else {
-          return false;
-        }
-      
-      }
-    
+    return function (string){
+        // return a function that tests whether a given string starts with the startsWith character.
+       return string.toLowerCase().startsWith(startsWith.toLowerCase())
+     }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -66,8 +60,9 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    return function(string){
+    return string.toUpperCase().endsWith(endsWith.toUpperCase())
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -82,14 +77,26 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    // set up a empty string to collect data
-    let result = " "
-for (let i = 0; i => array.length; i++)
-    
-    
-    return result 
+      // set up a empty array to collect data
+        // set up a empty array to collect data
+    let result = [];
+  
+    //loop through the array of strings
+  for (let i = 0; i < strings.length; i++){
+    // pass each string to the modify function
+    let newVariable = modify(strings[i])
+  // push the modified strings into the array
+     result.push(newVariable)
+  }
+      return result 
+    }
+  
+  someWords = ["words", "are", "fun"]
+    var changed = modifyStrings(someWords, function(strings){
+      return strings.toUpperCase();
+    });
     // YOUR CODE ABOVE HERE //
-}
+
 
 /** 
  * Given an Array of Strings and a Function designed to test the String in some 
@@ -102,8 +109,23 @@ for (let i = 0; i => array.length; i++)
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    // 
     
-    
+    function allStringsPass(strings, test) {
+        // YOUR CODE BELOW HERE //
+        // set up a empty array to collect data
+        let result = [];
+        // loop through the array of strings
+        for (let i = 0; i < strings.length; i++){
+    if (test(strings[i]) === true){
+    result.push(strings[i])
+    }
+        } return result
+    }
+    let arr = ["words", "are", "fun"]
+      let testCase = allStringsPass(arr, function(strings){
+        return strings.startsWith("C")
+      })
     
     
     // YOUR CODE ABOVE HERE //
