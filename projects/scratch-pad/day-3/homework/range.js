@@ -24,7 +24,17 @@
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
-    
+    let result = [];
+    // create a loop to iterate through the range
+    for (let i = start; i <= end; i++){
+      // push the values into the array
+      result.push(i)
+       } 
+    (start > end)
+    for (let i = start; i >= end; i--){
+      result.push(i)
+    } return result
+  
     
     
     // YOUR CODE GOES ABOVE HERE //

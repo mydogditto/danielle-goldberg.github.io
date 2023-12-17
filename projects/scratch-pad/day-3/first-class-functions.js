@@ -109,25 +109,24 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     
-        // YOUR CODE BELOW HERE //
-        // set up a empty array to collect data
-        let result = true;
-        // loop through the array of strings
-        for (let i = 0; i < strings.length; i++){
-            //use the Bicondition opporator to test if all the values are true
-    if (!!test(strings[i]) === !!true){
-    result.push(strings[i])
-    }
-        } return result
-    }
-    let arr = ["words", "are", "fun"]
-      let testCase = allStringsPass(arr, function(strings){
-        return strings.startsWith("C")
-      });
-    
+  for (let i = 0; i < strings.length; i++){
+    //pass each value through the loop, evaluating if all cases are true.
+if (test(strings[i]) === false){
+// return true if all cases are true
+
+return false
+} 
+  } return true
+   
+  }
+let arr = ["adilade", "arabela", "bgravating"]
+let testCase = allStringsPass(arr, function(strings){
+  return strings.startsWith("a");
+})   
+
     
     // YOUR CODE ABOVE HERE //
-    
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
