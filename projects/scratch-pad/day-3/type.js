@@ -16,11 +16,16 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    if (Array.isArray(value)) {
+      return true
+    } 
+     return false 
+  
+}
     
     
     // YOUR CODE ABOVE HERE //
-}
+
 
 /** 
  * Given an input value, return true if the value is an Object intended as a 
