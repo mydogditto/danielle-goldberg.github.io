@@ -21,7 +21,12 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-    
+   // create an empty string
+  
+   let splitInput = input.split('');
+ let reversal = splitInput.reverse();
+let joinReversal = reversal.join('');
+return joinReversal
     
     
     
