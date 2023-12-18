@@ -80,7 +80,9 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
+    if(typeof value === string ){
+        console.log("string")
+    }
     
     
     
