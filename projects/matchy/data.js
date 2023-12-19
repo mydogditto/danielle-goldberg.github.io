@@ -33,8 +33,8 @@ console.log(noises)
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 animal["noises"] = noises;
-animal["noises"][4] = noises.push("yip")
-
+animal.noises[4] = noises.push("yip")
+console.log(animal)
 
 
 /* *******************************************************************
@@ -83,8 +83,12 @@ animals.push(dolphin)
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+// we are making a list of like object so it is locial to use an array to hold the like items
+var friends = []
 
-
+function getRandom(animals){
+return Math.random()
+} console.log(getRandom)
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
