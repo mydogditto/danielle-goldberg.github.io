@@ -89,13 +89,12 @@ console.log(animals.length)
 var friends = []
 
 function getRandom(animals){
-return Math.floor(Math.random()* 5);
+return Math.floor(Math.random()* 4);
 }
 
 friends.push(animals[getRandom(animals)].name);
 animal["friends"] = friends;
 console.log(animals);
-
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
