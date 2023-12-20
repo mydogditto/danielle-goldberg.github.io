@@ -63,7 +63,7 @@ function makeContactList() {
             for(let i = 0; i < contacts.length; i++){
                 var nameFull = contacts[i].nameFirst + " " + contacts[i].lastName 
                 if (nameFull === fullName){
-                    return fullName
+                    return object
                 }
 
             }

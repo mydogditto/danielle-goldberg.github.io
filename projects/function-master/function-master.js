@@ -2,8 +2,16 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-function objectValues(object) {
+//const { result } = require("lodash")
 
+function objectValues(object) {
+let result = []
+for (let key in object){
+    object[key]
+    result.push(object[key])
+
+}
+return result 
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -11,7 +19,12 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+let result = []
+for (let key in object){
 
+    result.push(key)
+}
+return result.join(" ")
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -19,15 +32,31 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
-}
+    // initialize output array
+    let output = []
+    // itterate through object keys
+    for( let key in object ){
+        // if value is a string
+        if(typeof object[key]=== 'string'){
+        // push to output array
+    output.push(object[key]);
+        //return joined output
+    }
+    } 
+    return output.join(" ")
+} 
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    if(Array.isArray(collection)){
+        return "array"
+    } else{
+        return "object"
+    }
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,8 +64,13 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
-}
+    let output = []
+   
+       var something = string[0].toUpperCase() 
+       output.push
+       
+    } return output.join()
+ 
 
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
