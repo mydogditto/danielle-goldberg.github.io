@@ -15,13 +15,16 @@
 function search(array, string){
     // loop through the animals array
 for (i = 0; i < array.length; i++){
-    // if string is equal to the object dog
-    if(string === string) {
-        return null
-    } else {
-        return null
-    }
+    // if string is equal to a string in that array, return string object
+  if ( array[i] === string){
+    return string
+    // if string not found return null
+  } else {
+    return null
+  }
+
 }
+
 } console.log(search("animals", "Porsha"))
 
 //////////////////////////////////////////////////////////////////////
@@ -35,13 +38,17 @@ function replace(animals, name, replacement){
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+function remove(array, string){
 
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function add(array, object){
+    
+}
 
 
 /**
