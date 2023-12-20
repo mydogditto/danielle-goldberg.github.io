@@ -50,21 +50,23 @@ function makeContactList() {
      */
     var contacts = []
 
-    
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
         },
         addContact: function(object){
+            contacts.push(object)
            contacts[contacts.length] 
+           
             return object
             
-        }
+        } 
 
-    
+        
     }
-}
+    
+} 
 
 
 
