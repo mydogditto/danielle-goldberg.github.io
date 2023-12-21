@@ -70,21 +70,17 @@ function makeContactList() {
        removeContact: function(object){
         contacts.pop(object)
        },
-
-       printAllContactNames: function(object){
-        let storage = []
-        for(let i = 0; i < contacts.length;  i++){
-             storage.push(contacts[i])
-             var nameFull = contacts[i].nameFirst + " " + contacts[i].nameLast
-            
-        console.log(storage)
-        
-        
-        
-        
-        }
-       }
-    }
+         printAllContactNames: function(){
+        let string = ""
+        for(let i = 0; i < contacts.length; i++){
+            console.log(contacts[i])
+             var allNames = contacts[i].nameFirst + " " + contacts[i].nameLast + "\n"
+           string += allNames
+           
+        } 
+        return string
+       }  
+    } 
     
 } 
 
