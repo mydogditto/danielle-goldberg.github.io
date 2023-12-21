@@ -59,14 +59,15 @@ function makeContactList() {
             contacts.push(object)
            contacts[contacts.length] 
         }, findObject: function (fullName){
-
             for(let i = 0; i < contacts.length; i++){
                 var nameFull = contacts[i].nameFirst + " " + contacts[i].lastName 
-                if (nameFull === fullName){
-                    return object
+                if (nameFull === fullName)
+                { return contacts[i] 
+                } else 
+                 { return null
                 }
 
-            }
+            } 
         },
        
 
