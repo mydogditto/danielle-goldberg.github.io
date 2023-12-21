@@ -71,14 +71,15 @@ function makeContactList() {
         contacts.pop(object)
        },
          printAllContactNames: function(){
-        let string = ""
+        let fullName = ""
         for(let i = 0; i < contacts.length; i++){
-            console.log(contacts[i])
-             var allNames = contacts[i].nameFirst + " " + contacts[i].nameLast + "\n"
-           string += allNames
-           
-        } 
-        return string
+            if (i === contacts.length - 1){
+             fullName += contacts[i].nameFirst + " " + contacts[i].nameLast;
+            } else {fullName += contacts[i].nameFirst + " " + contacts[i].nameLast + "\n"
+
+            }
+        } return fullName
+        
        }  
     } 
     
