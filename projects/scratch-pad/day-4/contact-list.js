@@ -72,7 +72,17 @@ function makeContactList() {
        },
 
        printAllContactNames: function(object){
-
+        let storage = []
+        for(let i = 0; i < contacts.length;  i++){
+             storage.push(contacts[i])
+             var nameFull = contacts[i].nameFirst + " " + contacts[i].nameLast
+            
+        console.log(storage)
+        
+        
+        
+        
+        }
        }
     }
     
