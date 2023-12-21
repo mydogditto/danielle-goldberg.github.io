@@ -58,20 +58,22 @@ function makeContactList() {
         addContact: function(object){
             contacts.push(object)
            contacts[contacts.length] 
-        }, findObject: function (fullName){
+        }, findContact: function (fullName){
             for(let i = 0; i < contacts.length; i++){
-                var nameFull = contacts[i].nameFirst + " " + contacts[i].lastName 
+                var nameFull = contacts[i].nameFirst + " " + contacts[i].nameLast 
                 if (nameFull === fullName)
                 { return contacts[i] 
-                } else 
-                 { return null
-                }
-
+                } 
+                return undefined
             } 
         },
-       
+       removeContact: function(object){
+        contacts.pop(object)
+       },
 
-        
+       printAllContactNames: function(object){
+
+       }
     }
     
 } 
