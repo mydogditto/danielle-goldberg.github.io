@@ -25,7 +25,7 @@ if(stringName === string){
 
   return null
 } 
-// console.log(search(animals, "Porsha"))
+
 
 
 
@@ -33,12 +33,14 @@ if(stringName === string){
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function replace(array, string, object){
+  // loop throught he array
     for(let i = 0; i < array.length; i++){
+      //set a variable to the result of itteration of each name
       var stringName = array[i].name
       if(stringName === string){
-        
+        string === object
       } 
-    }
+    } return true
 }
 
 
@@ -46,9 +48,15 @@ function replace(array, string, object){
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function remove(array, string){
-
+  // loop throught he array
+  for(let i = 0; i < array.length; i++){
+    //set a variable to the result of itteration of each name
+    var stringName = array[i].name
+    if(stringName === string){
+      return true 
 }
-
+  }
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
