@@ -14,28 +14,32 @@
 //////////////////////////////////////////////////////////////////////
 function search(array, string){
     // loop through the animals array
-for (i = 0; i < array.length; i++){
+for (let i = 0; i < array.length; i++){
     // if string is equal to a string in that array, return string object
-  if ( array[i] === string){
-    return string
-    // if string not found return null
-  } else {
-    return null
-  }
-
+  
+  var stringName = array[i].name
+if(stringName === string){
+  return array[i]
+} 
 }
 
-} console.log(search("animals", "Porsha"))
+  return null
+} 
+// console.log(search(animals, "Porsha"))
+
+
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-// function replace(array, string, object){
-//     for (i = 0; i < array.length; i++){
-//       if (array[i] === string)
-      
-//     }
-// }
+function replace(array, string, object){
+    for(let i = 0; i < array.length; i++){
+      var stringName = array[i].name
+      if(stringName === string){
+        
+      } 
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////
@@ -50,7 +54,11 @@ function remove(array, string){
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function add(array, object){
-    
+    for ( let i = 0; i < array.length; i++){
+      if ( array[i] === object.name){
+
+      }
+    }
 }
 
 

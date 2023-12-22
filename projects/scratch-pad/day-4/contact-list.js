@@ -75,7 +75,7 @@ function makeContactList() {
         for(let i = 0; i < contacts.length; i++){
             if (i === contacts.length - 1){
              fullName += contacts[i].nameFirst + " " + contacts[i].nameLast;
-            } else {fullName += contacts[i].nameFirst + " " + contacts[i].nameLast + "\n"
+            } else {fullName += contacts[i].nameFirst + " " + contacts[i].nameLast + "\n";
 
             }
         } return fullName
