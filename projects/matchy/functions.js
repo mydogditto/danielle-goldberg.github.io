@@ -61,14 +61,22 @@ function remove(array, string){
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function add(array, object){
-    for ( let i = 0; i < array.length; i++){
-      if ( array[i] === object.name){
-
-      }
+function add(animals, animal){
+// if animal has an empty name 
+if (animal.name.length > 0){
+  // if animal has an empty spicies property 
+  if(animal.species.length > 0){
+    // if animal has a unique name
+    if(!animals.some(animalObj => animalObj.name === animal.name)){
+      //add animal to animals array
+      animals.push(animal);
     }
+  }
 }
 
+
+
+}
 
 /**
  * You did it! You're all done with Matchy!
