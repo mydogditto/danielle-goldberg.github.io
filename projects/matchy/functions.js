@@ -32,15 +32,15 @@ if(stringName === string){
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function replace(array, string, object){
+function replace(animals, name, replacement){
   // loop throught he array
-    for(let i = 0; i < array.length; i++){
-      //set a variable to the result of itteration of each name
-      var stringName = array[i].name
-      if(stringName === string){
-        string === object
-      } 
-    } return true
+    for(let i = 0; i < animals.length; i++){
+      if (animals[i].name === name){
+        return animals[i] = replacement 
+      }
+     
+      } return null
+     
 }
 
 
