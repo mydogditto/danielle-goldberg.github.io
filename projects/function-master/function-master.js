@@ -77,18 +77,32 @@ function capitalizeWord(string) {
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// function capitalizeAllWords(string) {
-//     for (let i =0; i < string.length;)
-// }
+ function capitalizeAllWords(string){
+    var split = string.split(" ");
+    var array = []
+    for (let i =0; i < split.length;){
+        var upperCasedString = split[i][0].toUpperCase();
+        var sliced = split[i].slice(1);
+        var newString = upperCasedString + sliced;
+        array.push(newString);
+    
+    }
+    var arrayToString = array.join(" ");
+    return arrayToString
+ }
+
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-for (var key in object){
-
-
-}
+var array = [];
+var newestObject = object[key][0].toUpperCase();
+var sliced = object[key].slice(1)
+var lastThing = newestObject + sliced;
+array.push(lastThing);
+var arrayToString = array.join(" ");
+return "Welcome " + arrayToString + "!";
 }
 
 //////////////////////////////////////////////////////////////////////
