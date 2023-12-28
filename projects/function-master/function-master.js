@@ -9,9 +9,7 @@ let result = []
 for (let key in object){
     object[key]
     result.push(object[key])
-
-}
-return result 
+} return result 
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -19,12 +17,12 @@ return result
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-let result = []
+let results = []
 for (let key in object){
 
-    result.push(key)
+    results.push(key)
 }
-return result.join(" ")
+return results.join(" ")
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -77,19 +75,19 @@ function capitalizeWord(string) {
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-//  function capitalizeAllWords(string){
-//     var split = string.split(" ");
-//     var array = []
-//     for (let i =0; i < split.length;){
-//         var upperCasedString = split[i][0].toUpperCase();
-//         var sliced = split[i].slice(1);
-//         var newString = upperCasedString + sliced;
-//         array.push(newString);
+ function capitalizeAllWords(string){
+    var split = string.split(" ");
+    var array = []
+    for (let i =0; i < split.length; i++){
+        var upperCasedString = split[i][0].toUpperCase();
+        var sliced = split[i].slice(1);
+        var newString = upperCasedString + sliced;
+        array.push(newString);
     
-//     }
-//     var arrayToString = array.join(" ");
-//     return arrayToString
-//  }
+    }
+    var arrayToString = array.join(" ");
+    return arrayToString
+ }
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
@@ -171,15 +169,35 @@ if(object && object.friends && Array.isArray(object.friends)){
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+    var friends = [];
+    var nonFriends = [];
+    for (var i = 0; i < array.length; i++) {
+      if (array[i].name === name) {
+        friends = array[i].friends;
+      }
+    }
+    for (var j = 0; j < array.length; j++) {
+      if (friends.indexOf(array[j].name) === -1) {
+        nonFriends.push(array[j].name);
+      }
+      return nonFriends
+  }
+ 
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
 function updateObject(object, key, value) {
-
+ 
+//The key on an object should be updated with the new value.
+object[key] = value;
+return object;
+}
+//If the key does exist on the object, update the key.
+for (let key in object) {
+if (object.hasOwnProperty(key)) {
+  object[key] = value;
+}
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -187,23 +205,20 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    for (key in object){
+      for (let i = 0; i < array.length; i++) {
+        if (object.hasOwnProperty(array[i])) {
+          delete object[array[i]];
+        }
+      }
+    }
 }
-
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-    const uniqueElements = new Set(arry);
-    const filteredElements = arry.filter(item => {
-        if (uniqueElements.has(item)) {
-            uniqueElements.delete(item);
-        } else {
-            return item;
-        }
-    });
-    return [...new Set(uniqueElements)]
+    return [...new Set(array)];
 }
 
 
