@@ -30,9 +30,8 @@ function fizzBuzz() {
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
-
 function drawChessboard(number) {
-  let pattern = ' ';
+  let pattern = "";
   //use nested for loops to create the board
   for (let i = 1; i <= number; i++) {
 
@@ -41,17 +40,16 @@ function drawChessboard(number) {
     for (let j = 1; j <= number; j++) {
       // if the increments added together are even, add a space.
       if ((i + j) % 2 === 0) {
-        pattern += "#";
+        pattern += " ";
         // else add a #
       } else {
-        pattern += ' '; 
+        pattern += "#"; 
       }
     }   pattern += '\n';
-    
-  } return pattern
- 
+
+  } console.log(pattern)
+
   }
-   
 
 
 
