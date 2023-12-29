@@ -47,17 +47,19 @@ function replace(animals, name, replacement){
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-function remove(array, string){
-  // loop throught he array
-  for(let i = 0; i < array.length; i++){
-    //set a variable to the result of itteration of each name
-    var stringName = array[i].name
-    if(stringName === string){
-      return true 
+// write a function decalation called remove with a signature of remove(animals, name)
+function remove(animals, name){
+  //loop through the animals array
+  for (var i = 0; i < animals.length; i++){
+    // if the input name directly equals incraments name
+    if (animals[i].name === name){
+      // remove it
+      animals.splice(i, 1);
+    }
+  }
+  //otherwise return null
+  return null;
 }
-  }
-  }
-
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

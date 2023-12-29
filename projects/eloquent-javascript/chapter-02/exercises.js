@@ -35,7 +35,7 @@ function drawChessboard(number) {
   let pattern = ' ';
   //use nested for loops to create the board
   for (let i = 1; i <= number; i++) {
-    pattern += '\n';
+
     // add a newline to the pattern
     // pattern += '\n';
     for (let j = 1; j <= number; j++) {
@@ -46,7 +46,7 @@ function drawChessboard(number) {
       } else {
         pattern += ' '; 
       }
-    } 
+    }   pattern += '\n';
     
   } return pattern
  
