@@ -205,7 +205,7 @@ if (object.hasOwnProperty(key)) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-    for (key in object){
+    for (let key in object){
       for (let i = 0; i < array.length; i++) {
         if (object.hasOwnProperty(array[i])) {
           delete object[array[i]];
