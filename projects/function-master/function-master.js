@@ -78,7 +78,7 @@ function capitalizeWord(string) {
  function capitalizeAllWords(string){
     var split = string.split(" ");
     var array = []
-    for (let i =0; i < split.length; i++){
+    for (let i = 0; i < split.length; i++){
         var upperCasedString = split[i][0].toUpperCase();
         var sliced = split[i].slice(1);
         var newString = upperCasedString + sliced;
@@ -169,21 +169,19 @@ if(object && object.friends && Array.isArray(object.friends)){
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-    var friends = [];
-    var nonFriends = [];
-    for (var i = 0; i < array.length; i++) {
-      if (array[i].name === name) {
-        friends = array[i].friends;
-      }
-    }
-    for (var j = 0; j < array.length; j++) {
-      if (friends.indexOf(array[j].name) === -1) {
-        nonFriends.push(array[j].name);
-      }
-      return nonFriends
-  }
- 
-}
+  
+//     var nonFriends = [];
+//     for (var i = 0; i < array.length; i++) {
+//       if (array[i].friends.includes(name) === false) {
+//         nonFriends.push(array[i].name)
+         
+//         }
+        
+        
+//       } return nonFriends
+   
+   }
+
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
