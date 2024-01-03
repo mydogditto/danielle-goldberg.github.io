@@ -191,12 +191,7 @@ function updateObject(object, key, value) {
 object[key] = value;
 return object;
 }
-//If the key does exist on the object, update the key.
-// for (let key in object) {
-// if (object.hasOwnProperty(key)) {
-//   object[key] = value;
-// } else {
-    
+
 
 
 //////////////////////////////////////////////////////////////////////

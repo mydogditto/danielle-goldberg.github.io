@@ -269,40 +269,43 @@ _.map = function(collection, func){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-_every = function(collection, func){
-    // create an empty ouput array
-// if collection is an array 
-// loop through the array with a for loop 
-    // invoke callback 
-// if collection is an object 
-// loop through the object with a for in loop 
- // invoke callback and store in a variable 
-            // call the callback function 
-// 
-if( func === undefined){
+_.every = function(collection, func){
+  
+if(func === undefined){
     if (Array.isArray(collection)){
-// for loop
-        if (let i = 0; i < collection.length; i++ );{
-
+    // for loop
+        for (let i = 0; i < collection.length; i++){
+    // determon if current item is NOT truthy 
+        if(!collection[i]){
+         return false 
         }
-    } else {
+    }
 
+} else { 
+    for (let key in collection){
+     if(!collection[key]){
+        return false 
+     }
     }
 }
-
-        }
-
-
-
-      else{ 
-        if (Array.isArray(collection)){
-            for (let i =0; i < collection.length; i++){
-                if( !func(collection[i], i, collection)){
-                    return false
-                }
+} else {
+    if(Array.isArray(collection)){
+        for (let i = 0; i < collection.length; i++){
+            if(!func(collection[key], key, collection)){
+                return false
             }
         }
-      } 
+    } else {
+        for (let key in collection){
+            if(!func(collection[key], key, collection)){
+                return false 
+            }
+        }
+    }
+}
+return true;
+} 
+
 /** _.some
 * Arguments:
 *   1) A collection
