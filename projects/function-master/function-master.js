@@ -169,17 +169,17 @@ if(object && object.friends && Array.isArray(object.friends)){
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+
+    var nonFriends = [];
+    for (var i = 0; i < array.length; i++) {
+      if (array[i].friends.includes(name) === false && array[i].name !== name) {
+        nonFriends.push(array[i].name)
   
-//     var nonFriends = [];
-//     for (var i = 0; i < array.length; i++) {
-//       if (array[i].friends.includes(name) === false) {
-//         nonFriends.push(array[i].name)
-         
-//         }
-        
-        
-//       } return nonFriends
-   
+        }
+  
+  
+      } return nonFriends
+  
    }
 
 //////////////////////////////////////////////////////////////////////
@@ -187,16 +187,17 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 function updateObject(object, key, value) {
  
-//The key on an object should be updated with the new value.
+// //The key on an object should be updated with the new value.
 object[key] = value;
 return object;
 }
 //If the key does exist on the object, update the key.
-for (let key in object) {
-if (object.hasOwnProperty(key)) {
-  object[key] = value;
-}
-}
+// for (let key in object) {
+// if (object.hasOwnProperty(key)) {
+//   object[key] = value;
+// } else {
+    
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
