@@ -119,10 +119,10 @@ return false
   } return true
    
   }
-let arr = ["adilade", "arabela", "bgravating"]
-let testCase = allStringsPass(arr, function(strings){
-  return strings.startsWith("a");
-})   
+// let arr = ["adilade", "arabela", "bgravating"]
+// let testCase = allStringsPass(arr, function(strings){
+//   return strings.startsWith("a");
+// })   
 
     
     // YOUR CODE ABOVE HERE //

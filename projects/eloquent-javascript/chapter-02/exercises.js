@@ -40,7 +40,7 @@ function drawChessboard(number) {
     for (let j = 1; j <= number; j++) {
       // if the increments added together are even, add a space.
       if ((i + j) % 2 === 0) {
-        pattern += " ";
+        pattern += " " ;
         // else add a #
       } else {
         pattern += "#"; 
