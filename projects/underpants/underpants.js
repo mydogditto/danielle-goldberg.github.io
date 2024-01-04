@@ -67,6 +67,20 @@ _.identity = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(array, number){
+    if (Array.isArray(array)=== false){
+        return [];
+    } if(number === undefined || number === NaN){
+    return array[0];
+    } if (number < 0){
+        return [];
+    }if (number > array.length){
+        return array;
+    }else {
+        return array.slice(0, number)
+    }
+
+}
 
 /** _.last
 * Arguments:
@@ -85,7 +99,19 @@ _.identity = function(value){
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last = function(array, number){
+    if(Array.isArray(array)=== false){
+        return [];
+    } if (number === undefined || number === NaN){
+        return array [array.length -1];
+    } if (number < 0){
+        return []
+    }if (number > array.length){
+        return array
+    } else {
+        return array.slice(1, array[number.length -1])
+    }
+}
 
 /** _.indexOf
 * Arguments:
@@ -102,7 +128,14 @@ _.identity = function(value){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
+_.indexOf = function(array, value){
+    for (let i = 0; i < array.length; i++){
+        if (array[i]=== value){
+            return i
+        }
+    }
+    return -1
+}
 
 /** _.contains
 * Arguments:
@@ -118,7 +151,13 @@ _.identity = function(value){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function(array, value){
+    for (let i =0; i < array.length; i++){
+        if (array[i] === value){
+            return true;
+        }
+    } return false
+}
 
 /** _.each
 * Arguments:
@@ -135,7 +174,19 @@ _.identity = function(value){
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
-
+_.each = function (collection, func){
+    for( let i = 0; i < collection.length; i++){
+        if (Array.isArray(collection)=== false){
+            func(collection[i], i, collection);
+        }
+    }
+    for (let key in collection){
+        if (typeof collection === 'object'){
+            func(collection[key], key, collection);
+        
+        }
+    }
+}
 
 /** _.unique
 * Arguments:
@@ -147,7 +198,9 @@ _.identity = function(value){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-
+_.unique = function(array){
+    return [... new Set(array)];
+}
 /** _.filter
 * Arguments:
 *   1) An array
@@ -163,7 +216,15 @@ _.identity = function(value){
 * Extra Credit:
 *   use _.each in your implementation
 */
-
+_.filter = function(array,func){
+    let newArray = []
+    _.each (array, function(element, index, array){
+        if(func(element, index, array)){
+            newArray.push(element);
+        }
+    });
+    return newArray;
+}
 
 /** _.reject
 * Arguments:
@@ -177,7 +238,15 @@ _.identity = function(value){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
-
+_.reject = function(array, func){
+    let newArray = [];
+    _.each(array, function (element, index, array){
+        if(func(element, index, array)=== false){
+            newArray.push(element);
+        }
+    });
+    return newArray
+} 
 
 /** _.partition
 * Arguments:
@@ -270,7 +339,6 @@ _.map = function(collection, func){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 _.every = function(collection, func){
-  
 if(func === undefined){
     if (Array.isArray(collection)){
     // for loop
