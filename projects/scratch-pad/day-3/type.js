@@ -113,10 +113,10 @@ function typeOf(value) {
   return 'boolean'
   } else if (value === null){
     return 'null'
-  } else if (value instanceof Date){
-    return "date"
-  } else if (typeof value === 'function'){
-  } return 'function'
+  } else if (typeof value === "function" ){
+    return "function"
+  } else if (value === 'object'){
+  } return 'object'
   
     
     

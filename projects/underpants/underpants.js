@@ -47,7 +47,26 @@ _.identity = function(value){
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
+_.typeOf = function(value){
+    if(typeof value === 'string'){
+        return 'string'
+      } else if (Array.isArray(value)){
+        return 'array'
+      } else if (typeof value === 'undefined'){
+        return 'undefined'
+      } else if(typeof value === 'number'){
+        return 'number'
+      } else if (typeof value === 'boolean'){
+      return 'boolean'
+      } else if (value === null){
+        return 'null'
+      } else if (typeof value === "function" ){
+        return "function"
+      } else if (value === 'object'){
+      } return 'object'
+      
 
+}
 
 /** _.first
 * Arguments:
@@ -266,6 +285,18 @@ _.reject = function(array, func){
 *   }); -> [[2,4],[1,3,5]]
 }
 */
+_.partition = function(array, func){
+    let truthy = []
+    let falsy = []
+    for (let i = 0; i < array.length; i++){
+        if(func(array[i], i, array)){
+            truthy.push(array[i]);
+        } else {
+            falsy.push(array[i]);
+        }
+    }
+    return [truthy, falsy]
+}
 
 
 /** _.map
@@ -316,6 +347,12 @@ _.map = function(collection, func){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+_.pluck = function(array, property){
+    let object = _.map(array, function(object){
+        return object[property];
+    });
+    return object;
+}
 
 
 /** _.every
@@ -342,36 +379,36 @@ _.every = function(collection, func){
 if(func === undefined){
     if (Array.isArray(collection)){
     // for loop
-        for (let i = 0; i < collection.length; i++){
+        for (var i = 0; i < collection.length; i++){
     // determon if current item is NOT truthy 
         if(!collection[i]){
-         return false 
+         return false; 
         }
     }
 
 } else { 
-    for (let key in collection){
+    for (var key in collection){
      if(!collection[key]){
-        return false 
+        return false; 
      }
     }
 }
 } else {
     if(Array.isArray(collection)){
-        for (let i = 0; i < collection.length; i++){
-            if(!func(collection[key], key, collection)){
-                return false
+        for (var i = 0; i < collection.length; i++){
+            if(!func(collection[i], i, collection)){
+                return false;
             }
         }
     } else {
-        for (let key in collection){
+        for (var key in collection){
             if(!func(collection[key], key, collection)){
-                return false 
+                return false; 
             }
         }
     }
 }
-return true;
+    return true;
 } 
 
 /** _.some
@@ -394,7 +431,37 @@ return true;
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
+_.some = function(collection, func){
+if(func === undefined){
+    if(Array.isArray(collection)){
+        for (let i = 0; i < collection.length; i++){
+            if (collection[i]){
+                return true;
+            }
+        }
+    } else {
+        for (let key in collection){
+            if (collection[key]){
+                return true;
+            }
+        }
+    }
+}else {
+    if (Array.isArray(collection)){
+        for(let i = 0; i < collection.length; i++){
+            if(func(collection[i], i, collection === true)){
+                return true;
+            }
+        }
+    } else {
+        for (let key in collection){
+            if (func(collection[key], key, collection) === true){
+                return true
+            }
+        }
+    }
+} return false;
+} 
 
 /** _.reduce
 * Arguments:
@@ -414,7 +481,9 @@ return true;
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(array, func, seed){
 
+}
 
 /** _.extend
 * Arguments:
@@ -430,6 +499,8 @@ return true;
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
