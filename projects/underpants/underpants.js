@@ -218,7 +218,15 @@ _.each = function (collection, func){
 */
 
 _.unique = function(array){
-    return [... new Set(array)];
+    let uniqueArray = []
+    for(let i = 0; i < array.length; i++ ){
+        if(uniqueArray.indexOf(array[i])=== -1){
+            uniqueArray.push(array[i])
+        }
+    }
+   
+
+    return  uniqueArray;
 }
 /** _.filter
 * Arguments:
@@ -482,9 +490,21 @@ if(func === undefined){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 _.reduce = function(array, func, seed){
-
+// inishalize an output variable 
+let output;
+if(seed === undefined){
+    output = array[0];
+    for (let i = 1; i < array.length; i++){
+        output = func(output, array[i], i)
+    }
+} else {
+    output = seed;
+    for (let i = 0; i < array.length; i++){
+        output = func(output, array[i], i)
+    }
 }
-
+return output;
+}
 /** _.extend
 * Arguments:
 *   1) An Object
