@@ -355,9 +355,9 @@ _.map = function(collection, func){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-_.pluck = function(array, property){
+_.pluck = function(array, key){
     let object = _.map(array, function(object){
-        return object[property];
+        return object[key];
     });
     return object;
 }
