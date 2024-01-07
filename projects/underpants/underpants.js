@@ -520,8 +520,10 @@ return output;
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
-_.extend = function(object){
-    
+_.extend = function(target, ...objects){
+    for (let i = 0; i < objects.length; i++){
+        Object.assign(target, objects[i])
+    }
 }
 
 //////////////////////////////////////////////////////////////////////

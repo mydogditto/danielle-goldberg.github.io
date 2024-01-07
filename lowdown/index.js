@@ -346,10 +346,10 @@ module.exports.each = pluck;
         } 
         module.exports.each = some;
         /**
-         * 
-         * @param {*} array 
-         * @param {*} func 
-         * @param {*} seed 
+         * reduce: The function takes in an array and a callback function and an optional seed value. It then loops through the array, if seed is not defined it starts from the 0 index
+         * @param {Array} array 
+         * @param {function} func 
+         * @param {*} seed is a value 
          * @returns 
          */
 
@@ -370,3 +370,15 @@ module.exports.each = pluck;
             return output;
             }
             module.exports.each = reduce;
+        /**
+         * Extend: The function takes in an unknown number of objects and copies their
+         * key/ value pairs to the target object. By looping through  to see how many objects there are then, using Object. assign 
+         * @param {object} target 
+         * @param  {...any} objects 
+         */
+            function extend(target, ...objects){
+                for (let i =0; i < objects.length; i++){
+                    Object.assign(target, objects[i])
+                }
+            }
+            module.exports.each = extend;
