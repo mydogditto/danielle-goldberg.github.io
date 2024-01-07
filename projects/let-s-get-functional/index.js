@@ -27,45 +27,51 @@ var maleCount = function(array) {
 let males = _.filter(array, function(customer){
     return customer.gender === 'male';
 });
+return males.length
 };
 
 var femaleCount = function(array){
-// //find the number of female customers using reduce output number
-//     return _.reduce(array, function(accumulator, current){
-//         if (current.gender === "female"){
-//             accumulator += 1;
-//         }
-//         return accumulator;
-//     }, 0)
+//find the number of female customers using reduce output number
+return _.reduce(array, function(accumulator, current){
+    if (current.gender === "female"){
+        accumulator += 1;
+    }
+    return accumulator;
+}, 0)
 }
 
 var oldestCustomer = function(array){
-    // loop through the array to find the person with the oldest age value.
+    // loop through the array to fine the person with the oldest age value.
     //use filter
     // if value is higher than other values return
-let oldest = _.reduce(array, function(accumulator, current){
-    if (current.age > accumulator.age){
-        return current
-    } else {
-        return accumulator
-    }
-})
-return oldest.name
+    let oldest = _.reduce(array, function(accumulator, current){
+        if (current.age > accumulator.age){
+            return current;
+            } else {
+            return accumulator;
+            }
+
+
+
+    })
+    return oldest.name;
 };
+
+
 
 var youngestCustomer = function(array){
 //loop through the array to find the < number on the age key
 //filter 
 let youngest = _.reduce(array, function(accumulator, current){
     if (current.age > accumulator.age){
-        return accumulator
-    } else {
-        return current
-    }
-})
-return youngest.name
-};
+        return accumulator;
+        } else {
+        return current ;
+        }
 
+})
+return youngest.name;
+};
 
 var averageBalance = function(array){
 // gather all the balances using filter
@@ -75,47 +81,45 @@ var averageBalance = function(array){
 
 var firstLetterCount = function(array, letter){
     // use reduce to count the number of names with a given letter
-    //use pluck?
-    let letterGiven = _.filter(array, function(customer){
+    let friendLetter = _.filter(array, function(customer){
         if (customer.name[0].toUpperCase() === letter.toUpperCase()){
-            return customer.name;
+            return customer.name
         }
     })
-    return letterGiven
+    return friendLetter.length
 };
 
 var friendFirstLetterCount = function(array, customer, letter){
 // loop through the friends array of a given customer in the array, check 
 // which how many times a given letter starts a name.
 
+    
+
 };
 
 var friendsCount = function(array, name){
-let customerFriend = _.filter(array, function(customer){
-    return customer.name
-})
-return customerFriend
+    let customerFriendName = _.filter(array, function(customer){
+        if (customer.friends.includes(name) === true ){
+            return customer.name;
+        }
+    })
+    return customerFriendName;
 };
 
 var topThreeTags = function(array){
+    // use reduce to count how many times each tag appears in the
+    // customer object. 
+    // output the top three values to arr. 
 
 };
 
 var genderCount = function(array){
+// set up an empty object 
 // use reduce to gather male, female and non-binary
-return _.reduce(array, function(accumulator, current){
-    if (current.gender === "female"){
-        accumulator += 1;
-    } else if (current.gender === "male"){
-       return  accumulator += 1
-    } else if (current.gender === "non-binary"){
-        return accumulator +=1
-    } return accumulator;
-   
-    
-}, 0) 
-};
+// assign each value to the object 
+// return object
 
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

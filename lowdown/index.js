@@ -63,8 +63,8 @@ module.exports.each = typeOf;
 /**
  * first: The function take in an array and a number. It first determons that the number is a number, if it is a number
  * it returns the zero index of the array. If input is a number less than zero, it returns and empty array
- * @param {*} array takes in an input array
- * @param {*} number takes in a number to compair against 
+ * @param {Array} array takes in an input array
+ * @param {Number} number takes in a number to compair against 
  * @returns an empty array, first index of the array or array indxis equle to the number.
  */
 
@@ -83,11 +83,13 @@ module.exports.each = typeOf;
 
 }
 module.exports.each = first;
-/**
+/** 
+ * Last: This function take in an array and a number and return an empty array, the first value of the input array, or 
+ * number of indexes from the array equle to number. 
  * last: The function takes in an array and number. It returns 
- * @param {*} array 
- * @param {*} number 
- * @returns 
+ * @param {Array} array input array 
+ * @param {*} number a number that indicates how many indexis will be returned if the conditions are met.
+ * @returns The last index of the array, an empty array or the input number of indixes starting from the last index in the array. 
  */
 
  function last(array, number){
@@ -111,6 +113,22 @@ module.exports.each = last;
  * @returns 
  */
 
+ function indexOf(array, value){
+    for (let i = 0; i < array.length; i++){
+        if (array[i]=== value){
+            return i
+        }
+    }
+    return -1
+}
+module.exports.each = indexOf;
+/**
+ * Contains: A function that loops through the input array to determon if the input value is present. The function returns true if present or false if not. 
+ * @param {Array} an input arrray to cycle through. 
+ * @param {*} value 
+ * @returns true if the value is present false if not. 
+ */
+
  function contains(array, value){
     for (let i =0; i < array.length; i++){
         if (array[i] === value){
@@ -120,9 +138,9 @@ module.exports.each = last;
 }
 module.exports.each = contains;
 /**
- * 
- * @param {*} collection 
- * @param {*} func 
+ * each: The function takes in a collection and a callback function. 
+ * @param {Object, array} collection 
+ * @param {Function} func 
  */
 
 _.each = function (collection, func){
@@ -327,6 +345,13 @@ module.exports.each = pluck;
         } return false;
         } 
         module.exports.each = some;
+        /**
+         * 
+         * @param {*} array 
+         * @param {*} func 
+         * @param {*} seed 
+         * @returns 
+         */
 
          function reduce(array, func, seed){
             // inishalize an output variable 
