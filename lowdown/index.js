@@ -178,7 +178,8 @@ module.exports.each = each;
     return  uniqueArray;
 }module.exports.each = unique;
 /**
- * Filter: Takes in an input array invokes a callback function. It returns a new array with only the values that pass the test in the callback function. 
+ * Filter: Takes in an input array invokes a callback function. 
+ * It returns a new array with only the values that pass the test in the callback function. 
 
  * @param {Array} An input array 
  * @param {function} a callback function with a test. 
@@ -195,9 +196,11 @@ module.exports.each = each;
 }
 module.exports.each = filter;
 /**
+ * Reject: Is a function that takes in an array and a callback function. It invokes the function on each element of the each function
+ * evaluates the contion is the callback function and returns a new array with elements from the input array. 
  * @param {Array} array 
  * @param {function} A callback function
- * @returns 
+ * @returns The new array of elements
  */
 function reject(array, func){
     let newArray = [];
@@ -210,6 +213,13 @@ function reject(array, func){
 } 
 
 module.exports.each = reject;
+/**Partition: The function takes in an array and a callback function. 
+ * It loops through the array and seporates the truthy values from the falsy values. 
+ * It returns an array of two arrays one with the trulthy valuses and one with the falsey values. 
+ * @param {Array} An array of values to be evaluated. 
+ * @param {Function} function that determons if the values are truthy or false. 
+ * @returns an array with two arrays inside with the values from the input array seporated into truthy and falsey values. 
+ */
 
  function partition(array, func){
     let truthy = []
@@ -225,10 +235,11 @@ module.exports.each = reject;
 }
 module.exports.each = partition;
 /**
- * 
- * @param {*} collection 
- * @param {*} func 
- * @returns 
+ * map: The function takes in a collection and invokes the callback function on every element in the collection.
+ * It returns the and array of the new values. 
+ * @param {Object or array} collection is either an array or an object.
+ * @param {Function} a function that preforms an action on the elements in the collection.
+ * @returns a new array
  */
  function map(collection, func){
     // create an ouput array
@@ -254,11 +265,12 @@ module.exports.each = partition;
 }
 module.exports.each = map;
 /**
- * 
- * @param {*} array 
- * @param {*} key 
- * @returns 
- */
+ * pluck: The function takes in an array of objects a object key. It returns all the values at that given key. 
+ * @param {Array} array 
+ * @param {Object key} key 
+ * @returns It returns all the values at that given key. 
+ 
+ *  */
 
 function pluck(array, key){
     let object = _.map(array, function(object){
@@ -269,10 +281,12 @@ function pluck(array, key){
 
 module.exports.each = pluck;
 /**
+ * Every: The function take in a collection and determons if all elements in the collection passes the test in the callback function. 
+ * It returns a boolian value. It only returns true if all elements pass the test
  * 
- * @param {*} collection 
- * @param {*} func 
- * @returns 
+ * @param {Object or Array} collection 
+ * @param {Function} function to test element against
+ * @returns Boolian value of true or false
  */
 
  function every(collection, func){
@@ -312,10 +326,13 @@ module.exports.each = pluck;
     } 
     module.exports.each = every;
     /**
+     *
+     * some: is a function that takes in an object or an array and test if the elements in the array pass the test in the callback function. 
+     * If at leasat one element passes it returns ture otherwise it returns false. 
      * 
-     * @param {*} collection 
-     * @param {*} func 
-     * @returns 
+     * @param {Object or Array} collection 
+     * @param {function} A callback function
+     * @returns A boolian value 
      */
     function some(collection, func){
         if(func === undefined){
