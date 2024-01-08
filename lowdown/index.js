@@ -268,9 +268,8 @@ module.exports.each = map;
  * pluck: The function takes in an array of objects a object key. It returns all the values at that given key. 
  * @param {Array} array 
  * @param {Object key} key 
- * @returns It returns all the values at that given key. 
- 
- *  */
+ * @returns It returns all the values at that given key in an array. 
+  **/
 
 function pluck(array, key){
     let object = _.map(array, function(object){

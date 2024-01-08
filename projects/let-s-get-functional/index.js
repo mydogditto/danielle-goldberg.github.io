@@ -74,7 +74,10 @@ return youngest.name;
 };
 
 var averageBalance = function(array){
-// gather all the balances using filter
+// gather all the balances using pluck
+let Ballance = _.pluck(customer, balance, function (customer)){
+
+}
 // set the callback to add all the balances together
 //then devide by the number of balance values
 };
