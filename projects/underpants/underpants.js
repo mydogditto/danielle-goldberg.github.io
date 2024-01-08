@@ -522,9 +522,10 @@ return output;
 
 _.extend = function(target, ...objects){
     for (let i = 0; i < objects.length; i++){
-        Object.assign(target, objects[i])
+        Object.assign(target, objects[i]);
     }
-}
+    return target
+} 
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

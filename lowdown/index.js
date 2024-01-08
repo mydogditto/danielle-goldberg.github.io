@@ -107,10 +107,13 @@ module.exports.each = first;
 }
 module.exports.each = last;
 /**
+ * indexOf: is a function that takes in an array and a value to look for, by looping. 
+ * If the input value is found, it returns the index of the value, otherwise it returns -1.
  * 
- * @param {*} array 
+ * 
+ * @param {Array} an input array
  * @param {*} value 
- * @returns 
+ * @returns the indexs where the value was found or -1
  */
 
  function indexOf(array, value){
@@ -125,7 +128,7 @@ module.exports.each = indexOf;
 /**
  * Contains: A function that loops through the input array to determon if the input value is present. The function returns true if present or false if not. 
  * @param {Array} an input arrray to cycle through. 
- * @param {*} value 
+ * @param {*} and input value to look for. 
  * @returns true if the value is present false if not. 
  */
 
@@ -138,9 +141,9 @@ module.exports.each = indexOf;
 }
 module.exports.each = contains;
 /**
- * each: The function takes in a collection and a callback function. 
- * @param {Object, array} collection 
- * @param {Function} func 
+ * each: The function takes in a collection and a callback function. it invokes the callback on every array element.
+ * @param {Object, array} collection object or an array 
+ * @param {Function} Callback function
  */
 
 _.each = function (collection, func){
@@ -158,9 +161,10 @@ _.each = function (collection, func){
 }
 module.exports.each = each;
 /**
- * 
- * @param {*} array 
- * @returns 
+ * Unique: The function takes in an array and iliminates all the non unique elements. 
+ * It returns an array with no duplicates.
+ * @param {Array} Take in an input array. 
+ * @returns A new array with no duplicates
  */
  function unique(array){
     let uniqueArray = []
@@ -174,9 +178,10 @@ module.exports.each = each;
     return  uniqueArray;
 }module.exports.each = unique;
 /**
- * 
- * @param {*} array 
- * @param {*} func 
+ * Filter: Takes in an input array invokes a callback function. It returns a new array with only the values that pass the test in the callback function. 
+
+ * @param {Array} An input array 
+ * @param {function} a callback function with a test. 
  * @returns 
  */
   function filter (array,func){
@@ -190,9 +195,8 @@ module.exports.each = each;
 }
 module.exports.each = filter;
 /**
- * 
- * @param {*} array 
- * @param {*} func 
+ * @param {Array} array 
+ * @param {function} A callback function
  * @returns 
  */
 function reject(array, func){
@@ -346,9 +350,11 @@ module.exports.each = pluck;
         } 
         module.exports.each = some;
         /**
-         * reduce: The function takes in an array and a callback function and an optional seed value. It then loops through the array, if seed is not defined it starts from the 0 index
-         * @param {Array} array 
-         * @param {function} func 
+         * reduce: The function takes in an array and a callback function and an optional seed value. It invokes the callback function on each element in the array. 
+         * and returns a single value. This effctivly reduces the information in the array to a single value based on a condition. 
+         * 
+         * @param {Array} An input array 
+         * @param {function} A callback function.
          * @param {*} seed is a value 
          * @returns 
          */
@@ -374,7 +380,7 @@ module.exports.each = pluck;
          * Extend: The function takes in an unknown number of objects and copies their
          * key/ value pairs to the target object. By looping through  to see how many objects there are then, using Object. assign 
          * @param {object} target 
-         * @param  {...any} objects 
+         * @param  {...object} objects 
          */
             function extend(target, ...objects){
                 for (let i =0; i < objects.length; i++){
