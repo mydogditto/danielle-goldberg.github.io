@@ -75,9 +75,7 @@ return youngest.name;
 
 var averageBalance = function(array){
 // gather all the balances using pluck
-let Ballance = _.pluck(customer, balance, function (customer)){
 
-}
 // set the callback to add all the balances together
 //then devide by the number of balance values
 };
@@ -95,7 +93,9 @@ var firstLetterCount = function(array, letter){
 var friendFirstLetterCount = function(array, customer, letter){
 // loop through the friends array of a given customer in the array, check 
 // which how many times a given letter starts a name.
-
+let friendFirstLetter = _.filter(array,(function(customer){
+    if(customer.friends)
+}))
     
 
 };

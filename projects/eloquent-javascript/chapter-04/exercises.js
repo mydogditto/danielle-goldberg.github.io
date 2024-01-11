@@ -3,15 +3,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function range(start, end, step = start < end ? 1 : -1) {
+
+  
   let array = [];
   if (start === end){
     return []
   }
 
   if (step > 0) {
-    for (let i = start; i <= end; i += step) array.push(i);
+    for (let i = start; i <= end; i += step) 
+    array.push(i);
   } else {
-    for (let i = start; i >= end; i += step) array.push(i);
+    for (let i = start; i >= end; i += step) 
+    array.push(i);
   }
   return array;
 }
