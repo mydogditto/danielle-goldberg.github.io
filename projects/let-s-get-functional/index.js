@@ -94,10 +94,12 @@ var friendFirstLetterCount = function(array, customer, letter){
 // loop through the friends array of a given customer in the array, check 
 // which how many times a given letter starts a name.
 let friendFirstLetter = _.filter(array,(function(customer){
-    if(customer.friends)
+    if(customer.friends[0][0].includes(letter).toLowerCase() === letter.toLowerCase){
+        return friendFirstLetter.length
+    }
+    return customer
 }))
     
-
 };
 
 var friendsCount = function(array, name){
@@ -113,15 +115,32 @@ var topThreeTags = function(array){
     // use reduce to count how many times each tag appears in the
     // customer object. 
     // output the top three values to arr. 
-
-};
+let result = array.reduce(function(accumulator,current){
+    let tags = current.tags;
+for (let i = 0; i < tags.length; i++){
+    if (accumulator[tags[i]]){
+        accumulator[tags[i]] += 1;
+    } else {
+        accumulator[tags[i]] = 1
+    }
+} return accumulator
+}, []);
+ return result
+}
 
 var genderCount = function(array){
 // set up an empty object 
 // use reduce to gather male, female and non-binary
 // assign each value to the object 
 // return object
-
+let count = _.reduce(array,function(acc, current){
+    if(acc[current.gender]){
+      acc[current.gender]++;
+    } else {
+      acc[current.gender] = 1;
+    } return acc;
+    },{})
+    return count
 };
 
 //////////////////////////////////////////////////////////////////////
