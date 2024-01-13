@@ -74,10 +74,12 @@ return youngest.name;
 };
 
 var averageBalance = function(array){
-// gather all the balances using pluck
-
-// set the callback to add all the balances together
-//then devide by the number of balance values
+let balance = _.reduce(array, function(accumulator, current){
+    let totalBalance = current.balance.replace(/[$, ,]/g, "");
+ let newNumbers = parseFloat(totalBalance);
+return newNumbers + accumulator;
+}, 0)
+return  balance / array.length
 };
 
 var firstLetterCount = function(array, letter){
@@ -91,15 +93,23 @@ var firstLetterCount = function(array, letter){
 };
 
 var friendFirstLetterCount = function(array, customer, letter){
-// loop through the friends array of a given customer in the array, check 
-// which how many times a given letter starts a name.
-let friendFirstLetter = _.filter(array,(function(customer){
-    if(customer.friends[0][0].includes(letter).toLowerCase() === letter.toLowerCase){
-        return friendFirstLetter.length
-    }
-    return customer
-}))
-    
+ //create a variable to store the count
+ var count = 0;
+ //create a variable to store the customer's friends
+ var friends = array.filter(function(cust){
+   return cust.name === customer;
+ })[0].friends;
+ //iterate through the friends array
+ friends.forEach(function(friend){
+   //if the first letter of the friend's name is equal to the letter
+   if(friend.name[0].toUpperCase() === letter.toUpperCase()){
+     //increment the count
+     count++;
+   }
+ })
+ //return the count
+ return count;
+
 };
 
 var friendsCount = function(array, name){
