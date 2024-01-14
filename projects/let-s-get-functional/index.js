@@ -113,30 +113,50 @@ var friendFirstLetterCount = function(array, customer, letter){
 };
 
 var friendsCount = function(array, name){
-    let customerFriendName = _.filter(array, function(customer){
-        if (customer.friends.includes(name) === true ){
-            return customer.name;
+    let customer = array.reduce(function(accumulator, current){
+      // iterate over current.friends array to access
+      for (let i = 0; i < current.friends.length; i++){
+        // if the name is in the friends array, push the name into the accumulator
+        if (current.friends[i].name === name){
+          accumulator.push(current.name);
         }
-    })
-    return customerFriendName;
-};
+      }
+      return accumulator;
+    }, [])
+    return customer;
+  }
 
-var topThreeTags = function(array){
-    // use reduce to count how many times each tag appears in the
-    // customer object. 
-    // output the top three values to arr. 
-let result = array.reduce(function(accumulator,current){
-    let tags = current.tags;
-for (let i = 0; i < tags.length; i++){
-    if (accumulator[tags[i]]){
-        accumulator[tags[i]] += 1;
-    } else {
-        accumulator[tags[i]] = 1
+  var topThreeTags = function(array){
+    // create a result object
+    let resultObj = array.reduce(function(accumulator, current){
+      // create a tags array
+      let tags = current.tags;
+      // iterate over the tags array
+      for (let i = 0; i < tags.length; i++){
+        // determine if the current tag ALREADY exists in acc
+        if (accumulator[tags[i]]){
+          // if it exists what do i do
+          accumulator[tags[i]] += 1;
+          // else it doesn't
+          // if it doesn't exist i need to create it and initialize it a value 
+        } else {
+          accumulator[tags[i]] = 1;
+        }
+      }
+      return accumulator;
+    }, {});
+    let resultArr = [];
+    // iterate through resultObj
+    for (var key in resultObj){
+      // push each key/value pair into resultArr
+      resultArr.push([key, resultObj[key]]);
     }
-} return accumulator
-}, []);
- return result
-}
+    resultArr.sort(function(a, b){
+      return b[1] - a[1];
+    })
+    // return array with the highest string followed by 2 follow by 3
+    return [resultArr[0][0], resultArr[1][0], resultArr[2][0]]
+  };
 
 var genderCount = function(array){
 // set up an empty object 
