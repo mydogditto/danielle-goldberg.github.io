@@ -130,7 +130,7 @@ if (xKeys.length !== yKeys.length){
   return false
 }
 for(let i = 0; i < xKeys.length; i++){
-  if (!yKeys.includes(xKeys[i])|| !deepEqual(xKeys[i], y[xkeys[i]])){
+  if (!yKeys.includes(xKeys[i])|| !deepEqual(x[xKeys[i]], y[xKeys[i]])){
     return false
   }
 }
