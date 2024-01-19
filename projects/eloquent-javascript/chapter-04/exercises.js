@@ -2,22 +2,23 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range(start, end, step = start < end ? 1 : -1) {
-
-  
-  let array = [];
+function range(start, end, step){
+  let output = [];
+  if (step === undefined){
+    step = 1;
+  }
+  if (step < 0){
+    return [];
+  }
   if (start === end){
-    return []
+    return [];
   }
-
-  if (step > 0) {
-    for (let i = start; i <= end; i += step) 
-    array.push(i);
-  } else {
-    for (let i = start; i >= end; i += step) 
-    array.push(i);
+  if (step > 0){
+    for (let i = start; i <= end; i += step){
+      output.push(i);
+    }
   }
-  return array;
+  return output;
 }
 
 
@@ -95,19 +96,20 @@ return listToArray(list.rest, array)
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend(array) {
-  let list = null;
-  for (let i = array.length - 1; i >= 0; i--) {
-    list = {value: array[i], rest: list};
-  }
-  return list;
+function prepend(value, list) {
+  return {value, rest: list}
+
 }
+  
 
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth() {
+function nth(list, n) {
+  if (!list) return undefined;
+  else if (n == 0) return list.value;
+  else return nth(list.rest, n - 1);
 
 }
 
@@ -115,8 +117,24 @@ function nth() {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
-
+function deepEqual(x, y) {
+if (typeof x !== 'object' && typeof y !== 'object'){
+return x ===y  
+}
+if (typeof x !== 'object' || typeof y !== 'object'){
+  return false
+}
+let xKeys = Object.keys(x)
+let yKeys = Object.keys(y)
+if (xKeys.length !== yKeys.length){
+  return false
+}
+for(let i = 0; i < xKeys.length; i++){
+  if (!yKeys.includes(xKeys[i])|| !deepEqual(xKeys[i], y[xkeys[i]])){
+    return false
+  }
+}
+return true
 }
 
 ////////////////////////////////////////////////////////////////////////////////
