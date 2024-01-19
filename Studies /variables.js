@@ -22,6 +22,7 @@
  * The hoisted variable bleeds into the outer scope. This makes it avalible in places other than the scope in which it is declaired.
  * It is important to note that the interpreter does not physicly move the variable just the way it interacts with it. Var is hoisted declerations are hoisted as are function declerations
  * Let and Const are hoisted but just the decloration not the value and can't be accessed untill they are assigned a value. 
+ * Hoisting is ruled by precidence. For example a function has priority over a variable declaired with var.
  * 
  * 
  * 
@@ -49,8 +50,24 @@ console.log(myDog) // prints => Ditto
 // 1. Let//
 // Let keyword works like var for inishilization and reassignment
 let myDog = "Ditto"
-console.log(myDog)//  prints => "Ditto"
-myDog = 
+console.log(myDog)//  prints => Ditto
+myDog = "Porsha" // prints => Porsha
+// 2. Const //
+// Const is inishalized the same way as let and var , but it cannot be re-assigned.
+Const oldDog = "Malissa" 
+console.log(oldDog)// prints => Malissa
+oldDog = "ditto" // prints => Error const cannot be redefined 
+// const cannot be declaired it must be inishalized. 
+const myDog
+console.log(myDog)// => refrence error missing inishilization
 
-
-
+// 1. Hoisting
+//      1. Var is hoisted so we can access the variable before it is declaired with the keyword.
+console.log(foo);// => undefined 
+var foo = 'fizbuz';
+// 2 Let is not hoised and will through a refrence error 
+console.log(myDogs)// prints => refrence error cannot access before inishilization
+let myDogs = "Porsha and Small Fry"
+// 3. const is not hoisted and is block scoped like let
+console.log(myDogs) // prints =>refrence error
+const myDogs = "Porsha and Small Fry"
