@@ -16,4 +16,24 @@
  * Code examples 
  * 
  * 
+ * 
  */
+// The + operator can be used to concatenate strings.
+let string1 = ""
+string1 = "hello" + " " + "world";
+
+console.log(string1)// hello world
+// The += operator can be used to concatenate strings.
+string1 += " " + "goodbye";
+console.log(string1)// helo world goodbye
+
+//The -+ operator can be used to change strings it will return NaN.
+string1 -= "goodbye";
+console.log(string1)// NaN
+// The *= operator can be used to change strings.
+let string2 = "7";
+string2 *= "4";
+console.log(string2)// 28
+// However, the values cannot be mixed unless simply concatenating them.
+ string2 *= "world"
+console.log(string2)// NaN

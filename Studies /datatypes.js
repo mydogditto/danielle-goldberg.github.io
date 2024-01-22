@@ -5,6 +5,7 @@
  *  Complex types offten have multipul instences of primative data types like an array of strings or numbers. The typeof opporator is used to tell us if a given pice of data is complex or simple. 
  * 
  * 2:String: Strings are groopings of letters or charicters surounded by quotation marks. Strings have cirten functions that can act on them and they are zero indexed, but they are a primative datatype. 
+ * strings are immutable.
  * 3: Boolian: Boolian are values that return either true or false. In JavaScript, Boolean is used as a function to get the value of a variable, object, conditions, expressions, etc.
  * in terms of true or false.
  * 4: Number: Numbers are integers that can then be manipulated. Numbers can be part of a string or stand alone. 
