@@ -39,3 +39,23 @@ if (age >= 18){
 } else{
   console.log("Cheers");
 }// print => Cheers
+
+// Example of Switch statment
+let day = "Monday";
+switch (day)
+  {
+    case "Monday": 
+      console.log("One is the loneliest number")
+      break
+    case "Tuesday":
+      console.log("Two can be as bad as one. Its the loneliest number since the number one.")
+      break
+    case "Wednesday":
+      console.log("Three is a crowd")
+      break
+    case "Thursday":
+      break;
+    default:
+      console.log("Not a valid day")
+  }
+// prints => One is the loneliest number
